@@ -6,8 +6,7 @@ class Post(models.Model):
     title = models.CharField(max_length=50, unique=True)
     subtitle = models.CharField(max_length=50, blank=True)
     body = RichTextField()
-    slug = models.SlugField(unique=True, max_length=100)
-    publish_date = models.DateTimeField(blank=True, null=True)
+    publish_date = models.DateTimeField(auto_now=True)
     tags = TaggableManager()
 
     class Meta:
