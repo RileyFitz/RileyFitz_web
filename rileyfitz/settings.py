@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # User added.
+    # Apps.
     'home.apps.HomeConfig',
+
+    # Extensions.
+    'taggit',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
