@@ -21,10 +21,12 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'subtitle', 'body', 'tags']
+    success_url = '/'
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     fields = ['title', 'subtitle', 'body', 'tags']
+    success_url = '/'
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
