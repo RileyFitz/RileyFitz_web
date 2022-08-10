@@ -1,4 +1,15 @@
 {% extends "home/base.html"%}
 {% block content %}
 <h2>Index page</h2>
+  {% for post in posts %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <small class="text-muted">{{ post.publish_date }}</small>
+        </div>
+        <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+        <p class="article-content">{{ post.subtitle }}</p>
+      </div>
+    </article>
+  {% endfor %}
 {% endblock content%}

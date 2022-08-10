@@ -1,5 +1,31 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView
+)
+from .models import Post
 
-class index(TemplateView):
+class index(ListView):
+    model = Post
     template_name = 'home/index.html'
+    context_object_name = 'posts'
+    ordering = ['-publish_date']
+
+class PostDetailView(DetailView):
+    model = Post
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'subtitle', 'body', 'tags']
+
+class PostUpdateView(LoginRequiredMixin, UpdateView):
+    model = Post
+    fields = ['title', 'subtitle', 'body', 'tags']
+
+class PostDeleteView(LoginRequiredMixin, DeleteView):
+    model = Post
+    success_url = '/'
