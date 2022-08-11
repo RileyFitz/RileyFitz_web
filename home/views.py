@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
+    TemplateView,
     ListView,
     DetailView,
     CreateView,
@@ -32,3 +33,6 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = '/'
+
+class Contact(TemplateView):
+    template_name = 'home/contact.html'
