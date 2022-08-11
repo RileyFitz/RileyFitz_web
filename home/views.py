@@ -14,6 +14,7 @@ class index(ListView):
     template_name = 'home/index.html'
     context_object_name = 'posts'
     ordering = ['-publish_date']
+    paginate_by = 10
 
 class PostDetailView(DetailView):
     model = Post
