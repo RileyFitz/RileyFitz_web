@@ -1,15 +1,20 @@
 {% extends "home/base.html"%}
 {% block content %}
-<h2>Index page</h2>
+<div class="shadow-4 rounded-3 py-4 w-75">
+  <h2 class="display-4  ">Hello, I'm Riley 👋</h2>
+  <p class="h5">I'm a fullstack developer from Denver, Colorado. I collect notes here to refer back to, and hopefully help others if they come across similar issues.</p>
+</div>
+<hr>
   {% for post in posts %}
     <article class="media content-section">
       <div class="media-body">
         <div class="article-metadata">
-          <small class="text-muted">{{ post.publish_date }}</small>
+          <small class="text-muted">{{ post.publish_date|date:"F d, Y" }}</small>
         </div>
-        <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+        <h2><a class="h3 text-decoration-none text-reset" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
         <p class="article-content">{{ post.subtitle }}</p>
       </div>
     </article>
+    <hr class="my-3">
   {% endfor %}
 {% endblock content%}
