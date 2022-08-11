@@ -1,5 +1,9 @@
 {% extends "home/base.html" %}
 {% block content %}
+<!-- highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad()</script>
   {% if user.is_authenticated %}
   <a class="btn btn-primary my-2" href="{% url 'post-update' object.pk %}">Update Post</a>
   <a class="btn btn-danger my-2" href="{% url 'post-delete' object.pk %}">Delete Post</a>

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -129,3 +130,29 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Additional settings.
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'skin': 'moono',
+        'toolbar_MyCustomToolbar': [{
+            'name': 'basic',
+            'items': [
+                'Source', 'Format', 'Font', 'Bold', 'Italic',
+                'undo', 'redo', 'NumberedList',
+                'BulletedList', 'Link', 'Table',
+                'CodeSnippet'
+            ]
+        }],
+        'codeSnippet_theme': 'monokai',
+        'toolbar': 'MyCustomToolbar',
+        'extraPlugins': ','.join(
+            [
+                'codesnippet',
+            ]
+        ),
+    }
+}
