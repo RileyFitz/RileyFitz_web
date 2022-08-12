@@ -57,17 +57,13 @@
             {% block content %}{% endblock %}
           </div>
           <div class="col-md-4">
-            <div class="content-section">
-              <h3>Our Sidebar</h3>
-              <p class='text-muted'>You can put any information here you'd like.
-                <ul class="list-group">
-                  <li class="list-group-item list-group-item-light">Latest Posts</li>
-                  <li class="list-group-item list-group-item-light">Announcements</li>
-                  <li class="list-group-item list-group-item-light">Calendars</li>
-                  <li class="list-group-item list-group-item-light">etc</li>
-                </ul>
-              </p>
-            </div>
+            <h4 class="m-2">Select different tags to explore..</h4>
+            <hr>
+            {% for tag in tags %}
+              <button type="button" class="btn btn-primary m-1">
+                {{ tag.name }} <span class="badge bg-secondary">{{ tag.num_items }}</span>
+              </button>
+            {% endfor %}
           </div>
         </div>
       </main>
