@@ -33,6 +33,13 @@ class index(ListView):
 class PostDetailView(DetailView):
     model = Post
 
+    def get_context_data(self, **kwargs):
+        data = super(PostDetailView, self).get_context_data(**kwargs)
+        pk = self.kwargs.get('pk')
+        tags = Post.objects.filter(pk=9)[0].tags.all()
+        data['tags'] = tags
+        return data
+
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'subtitle', 'body', 'tags']
