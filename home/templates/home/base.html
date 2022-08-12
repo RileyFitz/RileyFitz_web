@@ -59,6 +59,7 @@
           <div class="col-md-8">
             {% block content %}{% endblock %}
           </div>
+          {% if tags %}
           <div class="col-md-4">
             <h4 class="m-2">Select different tags to explore..</h4>
             <hr>
@@ -70,6 +71,7 @@
               </a>
             {% endfor %}
           </div>
+          {% endif %}
         </div>
       </main>
     </div>
