@@ -1,0 +1,16 @@
+{% extends "home/base.html" %}
+{% block content %}
+  <h1>Posts related to {{ tag }}</h1>
+  {% for post in posts %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <small class="text-muted">{{ post.publish_date|date:"F d, Y" }}</small>
+        </div>
+        <h2><a class="h3 text-decoration-none text-reset" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+        <p class="article-content">{{ post.subtitle }}</p>
+      </div>
+    </article>
+    <hr class="my-3">
+  {% endfor %}
+{% endblock content%}

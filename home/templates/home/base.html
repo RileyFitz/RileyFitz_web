@@ -60,9 +60,11 @@
             <h4 class="m-2">Select different tags to explore..</h4>
             <hr>
             {% for tag in tags %}
-              <button type="button" class="btn btn-primary m-1">
-                {{ tag.name }} <span class="badge bg-secondary">{{ tag.num_items }}</span>
-              </button>
+              <a href="{% url 'tags' tag.name %}">
+                <button type="button" class="btn btn-primary m-1">
+                  {{ tag.name }} <span class="badge bg-secondary">{{ tag.num_items }}</span>
+                </button>
+              </a>
             {% endfor %}
           </div>
         </div>

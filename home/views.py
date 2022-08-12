@@ -49,3 +49,16 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 
 class Contact(TemplateView):
     template_name = 'home/contact.html'
+
+class Tags(ListView):
+    model = Post
+    template_name = 'home/tags.html'
+    context_object_name = 'posts'
+
+    def get_context_data(self, **kwargs):
+        tag_name = self.kwargs.get('tag_name')
+        data = super(Tags, self).get_context_data(**kwargs)
+        tags = Tag.objects.filter(name=tag_name).values_list('name', flat=True)
+        data['posts'] = Post.objects.filter(tags__name__in=tags)
+        data['tags'] = Tag.objects.all()
+        return data
