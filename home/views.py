@@ -62,3 +62,6 @@ class Tags(ListView):
         data['posts'] = Post.objects.filter(tags__name__in=tags)
         data['tags'] = Tag.objects.all()
         return data
+
+class About(TemplateView):
+    template_name = 'home/about.html'
