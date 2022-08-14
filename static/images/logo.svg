@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="400"
+   height="100"
+   viewBox="0 0 105.83333 26.458333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (1:1.2.1+202207142221+cd75a1ee6d)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="2.0124761"
+     inkscape:cx="212.42488"
+     inkscape:cy="93.665708"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1775" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <rect
+       x="4.2368216"
+       y="4.908139"
+       width="390.08809"
+       height="91.359955"
+       id="rect2244" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.27814913,0,0,0.38361363,-2.5217655,-4.5327047)"
+       id="text2242"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:64px;font-family:KacstPen;-inkscape-font-specification:KacstPen;text-align:center;white-space:pre;shape-inside:url(#rect2244);display:inline;fill:#cccccc;fill-opacity:1;stroke:#d40000;stroke-width:2.01827;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0"><tspan
+         x="7.2490234"
+         y="63.57487"
+         id="tspan9976"><tspan
+           style="font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';stroke:#010000"
+           id="tspan9974">Riley-Fitz</tspan></tspan></text>
+  </g>
+</svg>
