@@ -7,13 +7,15 @@
 <hr>
   {% for post in posts %}
     <article class="media content-section">
-      <div class="media-body">
-        <div class="article-metadata">
-          <small class="text-muted">{{ post.publish_date|date:"F d, Y" }}</small>
+      <a class="text-decoration-none text-reset" href="{% url 'post-detail' post.id %}">
+        <div class="media-body">
+          <div class="article-metadata">
+            <small class="text-muted">{{ post.publish_date|date:"F d, Y" }}</small>
+          </div>
+          <h2 class="h3">{{ post.title }}</h2>
+          <p class="article-content">{{ post.subtitle }}</p>
         </div>
-        <h2><a class="h3 text-decoration-none text-reset" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-        <p class="article-content">{{ post.subtitle }}</p>
-      </div>
+      </a>
     </article>
     <hr class="my-3">
   {% endfor %}
