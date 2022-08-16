@@ -72,3 +72,6 @@ class Tags(ListView):
 
 class About(TemplateView):
     template_name = 'home/about.html'
+
+class Projects(TemplateView):
+    template_name = 'home/projects.html'
