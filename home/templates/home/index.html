@@ -2,7 +2,11 @@
 {% block content %}
 <div class="shadow-4 rounded-3 py-4 w-75">
   <h2 class="display-4  ">Hello, I'm Riley 👋</h2>
-  <p class="h5">I'm a fullstack developer from Denver, Colorado. I collect notes here to refer back to, and hopefully help others if they come across similar issues.</p>
+  <p class="h5">
+    I'm a Software Engineer from Denver, Colorado.
+    I collect notes here to refer back to, and hopefully help others if they come across similar issues.
+    You can find more out about me <a href="{% url 'about' %}">here</a>.
+  </p>
 </div>
 <hr>
   {% for post in posts %}
