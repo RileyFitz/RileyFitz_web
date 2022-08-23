@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 import os
 
@@ -20,13 +20,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$ezuxxyfoqr&^v(h_*u*g=_#^fvsx23vvxy@i(jkurlw73+ml!'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+# SECURITY WARNING: keep the secret key used in production secret!
+if not DEBUG:
+    secret_key_env_variable_name = 'RILEYFITZ_SECRET_KEY'
+    SECRET_KEY = os.environ.get(secret_key_env_variable_name)
+    if len(SECRET_KEY) < 25:
+        print( 'The value of $%s does not contain enough characters (%s characters)' % (secret_key_env_variable_name, len(SECRET_KEY)))
+        raise RuntimeError('SECRET_KEY is not long enough (in environment variable "%s"' % secret_key_env_variable_name)
+else:
+    SECRET_KEY = get_random_secret_key
 
 
 # Application definition
